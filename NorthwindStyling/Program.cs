@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using NorthwindStyling.Models;
+
 namespace NorthwindStyling
 {
     public class Program
@@ -8,6 +11,11 @@ namespace NorthwindStyling
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            // Lägg till min DbContext
+            builder.Services.AddDbContext<NorthwindContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
             var app = builder.Build();
 
