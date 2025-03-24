@@ -10,7 +10,6 @@ namespace NorthwindStyling.Pages
         private readonly ILogger<IndexModel> _logger;
         private readonly NorthwindContext _dbContext;
 
-
         public IndexModel(ILogger<IndexModel> logger, NorthwindContext dbContext)
         {
             _logger = logger;
